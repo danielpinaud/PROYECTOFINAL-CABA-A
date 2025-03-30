@@ -3,7 +3,7 @@ import '../assets/css/header.css'
 
 const Header = () =>(
     <header className="d-flex flex-column justify-content-center aligh-items-center" id="cabeceraFondo">
-        <h1 className="text-light text-center">¡CABAÑAS!</h1>
+        <h3 className="text-light text-center">EL LUGAR PERFECTO PARA DESCANZAR ES CON NOSOTROS</h3>
         <p className="text-light text-center">
             RESERVE SU CABAÑA
         </p>

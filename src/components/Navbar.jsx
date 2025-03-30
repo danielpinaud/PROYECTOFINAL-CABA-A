@@ -33,10 +33,20 @@ function Navbar() {
                                     </Link>
                                 </li>
                                 <li className="nav-item">
-                                    <button className="btn btn-outline-light botonLogout" >
-                                        <i className="bi bi-lock"></i>
-                                        &nbsp;Logout
-                                    </button>
+                                    <Link className="nav-link text-light" to="/cabañas">
+                                        <button className="btn btn-outline-light">
+                                            <i className="bi bi-unlock"></i>
+                                            &nbsp; CABAÑAS
+                                        </button>
+                                    </Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link text-light" to="/servicios">
+                                        <button className="btn btn-outline-light">
+                                            <i className="bi bi-unlock"></i>
+                                            &nbsp; SERVICIOS
+                                        </button>
+                                    </Link>
                                 </li>
                             </>
                         ) : (
@@ -45,7 +55,7 @@ function Navbar() {
                                     <Link className="nav-link text-light" to="/login">
                                         <button className="btn btn-outline-light">
                                             <i className="bi bi-key"></i>
-                                            &nbsp;Login
+                                            &nbsp;INICIAR SECION
                                         </button>
                                     </Link>
                                 </li>
@@ -53,7 +63,7 @@ function Navbar() {
                                     <Link className="nav-link text-light" to="/">
                                         <button className="btn btn-outline-light">
                                             <i className="bi bi-key"></i>
-                                            &nbsp;Register
+                                            &nbsp;REGISTRARSE
                                         </button>
                                     </Link>
                                 </li>
