@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../context/AuthContext';
 
 function Navbar() {
+    const { isAuthenticated, logout } = useContext(AuthContext);
+    
     return (
         <nav className="navbar navbar-expand-lg bg-dark">
             <div className="container-fluid">
@@ -12,7 +15,7 @@ function Navbar() {
                     <span className="navbar-toggler-icon"></span>
                 </button>
 
-                <div className="collapse navbar-collapse d-flex" id="navbarNav">
+                <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav w-100">
                         <li className="nav-item">
                             <Link className="nav-link text-light" to="/">
@@ -22,7 +25,7 @@ function Navbar() {
                                 </button>
                             </Link>
                         </li>
-                         (
+                        {isAuthenticated ? (
                             <>
                                 <li className="nav-item">
                                     <Link className="nav-link text-light" to="/quienessomos">
@@ -48,6 +51,12 @@ function Navbar() {
                                         </button>
                                     </Link>
                                 </li>
+                                <li className="nav-item">
+                                    <button className="btn btn-outline-danger nav-link" onClick={logout}>
+                                        <i className="bi bi-box-arrow-right"></i>
+                                        &nbsp;CERRAR SESIÓN
+                                    </button>
+                                </li>
                             </>
                         ) : (
                             <>
@@ -55,22 +64,22 @@ function Navbar() {
                                     <Link className="nav-link text-light" to="/login">
                                         <button className="btn btn-outline-light">
                                             <i className="bi bi-key"></i>
-                                            &nbsp;INICIAR SECION
+                                            &nbsp;INICIAR SESIÓN
                                         </button>
                                     </Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="nav-link text-light" to="/">
+                                    <Link className="nav-link text-light" to="/register">
                                         <button className="btn btn-outline-light">
-                                            <i className="bi bi-key"></i>
+                                            <i className="bi bi-person-plus"></i>
                                             &nbsp;REGISTRARSE
                                         </button>
                                     </Link>
                                 </li>
                             </>
-                        )
+                        )}
                         <li className="nav-item ms-auto">
-                            <Link className="nav-link" to="/">
+                            <Link className="nav-link" to="/reservar">
                                 <button className="btn btn-outline-success">
                                     <i className="bi bi-cart3"></i>
                                     &nbsp;RESERVAR
